@@ -230,14 +230,14 @@ namespace Assignment1_S19
 
 
             try {
-                int[] element_dist = new int[a.Length]; //loop 
+                int[] element_dist = new int[a.Length]; //array to store distinct elements from the input array
                 int count = 0;
                 int length = 0;
                 Console.WriteLine("Number   Frequency");
-                foreach (int i in a)
+                foreach (int i in a) //iterating over the array a
                 {
 
-                    if (!element_dist.Contains(i))
+                    if (!element_dist.Contains(i))// check if value from a is present in array element_dist
                     {
 
 
@@ -248,7 +248,7 @@ namespace Assignment1_S19
 
                             if (i == j)
                             {
-                                count++;
+                                count++; //variable to store the frequency of the individual values 
 
                             }//edof if
 
