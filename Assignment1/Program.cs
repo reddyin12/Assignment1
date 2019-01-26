@@ -31,8 +31,16 @@ namespace Assignment1_S19
 
             int[] arr = new int[] { 1, 2, 3, 2, 2, 1, 3, 2 };
             computeFrequency(arr);
+            Console.WriteLine("Enter any key to continue:");
+            Console.ReadKey(true);
 
-//self reflection
+            // Self Reflection: As I am new to programming in c#, got good understanding of flow control statements and nested loops and the syntax.
+            //Got to know more about the scope of the variables while working on the functions.Also, I found its easy to write the code once i complete the pseudocode.
+            // Writing code is easy once we create a blueprint of it by working on algorithm.
+            //Working with few problem statements, like creating triangle was fun.
+            //Recommendations: I felt, exercise should make us use more inbuilt functions and libraries so that we are well aware of them.
+            
+
 
 
            
@@ -44,11 +52,11 @@ namespace Assignment1_S19
             try
             {
                 Console.Write("Prime numbers between {0} and {1} are: ", min, max);
-                for (int num = min; num <= max; num++)
+                for (int num = min; num <= max; num++) //iteration on the range provided
                 {
 
-                    Boolean flag = true;
-                    for (int iter1 = num / 2; iter1 >= 2; iter1--)
+                    Boolean flag = true; //flag set to true for prime numbers
+                    for (int iter1 = num / 2; iter1 >= 2; iter1--) //check if each number in rage is divisible from 2 to number/2
                     {
 
                         if (num % iter1 == 0)
@@ -78,9 +86,9 @@ namespace Assignment1_S19
 
             try
             {
-                double result = 0;
+                double result = 0;//variabe to store series result
                 Console.WriteLine(fact(n));
-                for (int i = 1; i < n; i++)
+                for (int i = 1; i < n; i++) // iteration from 1 to number provided
                 {
                     if (i % 2 != 0)//if condition for odd terms
                     {
@@ -94,7 +102,7 @@ namespace Assignment1_S19
                 }//edof for 
                 int result_dec = (int)(result*1000); //rounding off to 3 decimals
                 Console.WriteLine(result_dec);
-                result = (double)result_dec/1000;
+                result = (double)result_dec/1000;//rounding off to 3 decimals
                 return result;
 
 
@@ -113,29 +121,29 @@ namespace Assignment1_S19
             // throw new NotImplementedException();
             try
             {
-                int factorial = 1;
-                while (num > 1)
+                int factorial = 1; //variable to store factorial result
+                while (num > 1) //loop to calculate factorial of num
                 {
                     factorial = factorial * num;
                     num--;
-                }
+                }//edof while
                 return factorial;
-            }
+            }//edof try
             catch
             {
                 Console.WriteLine("Exception occured while computing fact()");
-            }
+            }//edof catch
             return 0;
 
-        }
+        }//edof fact
 
         public static long decimalToBinary(long n)
         {
             try
             {
-                long number = n;
+                long number = n; //decima number provided
                 long binary = 0; //variable to store the result
-                int count = 1;
+                int count = 1; 
                 long var1 = 0; //variable for quotient
                 while (number != 0)
                 {
@@ -147,11 +155,11 @@ namespace Assignment1_S19
                 }//edof while
                 return binary;
 
-            }//dof try
+            }//edof try
                 catch
             {
                 Console.WriteLine("Exception occured while computing decimaltoBinary");
-            }
+            }//edof catch
             return 0;
         } //edof decimaltoBinary
 
@@ -159,26 +167,24 @@ namespace Assignment1_S19
         {
             try
             {
-                long var1;
-                long result=0;
-                int exp = 1;
-                while (n != 0)
+                long var1; //variable to store quotient
+                long result=0; //variable to store decial result
+               
+                for(int i=0;n!=0;i++)
                 {
                     var1 = n % 10;
-                    result = (long)(result + (var1 * exp));
+                    result = (long)(result + (var1 * Twopower(i)));
                     n = n / 10;
-                    exp=exp*2;
-
-                 }
+                   }//edof for
 
                 return result;
 
 
-            }
+            }//edof try
             catch
             {
                 Console.WriteLine("Exception occured while computing binaryToDecimal()");
-            }
+            }//edof catch
             return 0;
 
 
@@ -192,28 +198,28 @@ namespace Assignment1_S19
             try
             {
                 int z = 1;
-                for (int i = n; i >= 1; i--)
+                for (int i = n; i >= 1; i--) 
                 {
                     
-                    for (int j = 1; j <= i; j++)
+                    for (int j = 1; j <= i; j++) //for loop for adding spaces
                     {
                         Console.Write(" ");
-                    }
-                    for (int k = 1; k <= (2*z)-1;k++)
+                    }//edof for iter j
+                    for (int k = 1; k <= (2*z)-1;k++)//for loop for adding *'s
                     {
                         Console.Write("*");
                         
-                    }
+                    }//edof for iter k
                     z++;
                     
                   //  Console.Write("");
                     Console.WriteLine(" ");
-                }
-            }
+                }//edof iter i
+            }//edof try
             catch
             {
                 Console.WriteLine("Exception occured while computing printTriangle()");
-            }
+            }//edof catch
         }
 
         public static void computeFrequency(int[] a)
@@ -221,7 +227,7 @@ namespace Assignment1_S19
 
 
             try {
-                int[] element_dist = new int[a.Length];
+                int[] element_dist = new int[a.Length]; //loop 
                 int count = 0;
                 int length = 0;
                 Console.WriteLine("Number   Frequency");
@@ -241,14 +247,14 @@ namespace Assignment1_S19
                             {
                                 count++;
 
-                            }
+                            }//edof if
 
-                        }
+                        }//for each iter j
                         element_dist[length] = i;
                         Console.WriteLine("{0}          {1}", i, count);
                         length++;
-                    }
-                }
+                    }//edof if
+                }//edof for each iter i
 
 
             }
@@ -257,8 +263,26 @@ namespace Assignment1_S19
                 Console.WriteLine("Exception occured while computing computeFrequency()");
             
 
+        }//edof catch
+        }//edof computeFrequency method
+
+        public static int Twopower(int n) //method to calulate powers of 2
+        {
+            try
+            {
+                int exp = 1; //variable to store result
+                for (int i = 0; i < n; i++)
+                {
+                    exp = exp * 2; 
+                }//edof for
+                return exp;
+            }//edof try
+            catch
+            {
+                Console.WriteLine("Exception occured while computing computeFrequency()");
+            } //edof catch
+            return 0;
         }
-    }
     }//edof class
 
 
