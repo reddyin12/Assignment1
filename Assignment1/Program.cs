@@ -36,10 +36,13 @@ namespace Assignment1_S19
 
             // Self Reflection: As I am new to programming in c#, got good understanding of flow control statements and nested loops and the syntax.
             //Got to know more about the scope of the variables while working on the functions.Also, I found its easy to write the code once i complete the pseudocode.
-            // Writing code is easy once we create a blueprint of it by working on algorithm.
+            // Writing code is easy once we create a blueprint of it by working on algorithm
+            //learnt that, to get double as output by performing calculation on two integers, we need to parseusing (double)
+            //Got better understanding on when to use whil,for and foreach
             //Working with few problem statements, like creating triangle was fun.
+            //
             //Recommendations: I felt, exercise should make us use more inbuilt functions and libraries so that we are well aware of them.
-            
+             
 
 
 
@@ -56,7 +59,7 @@ namespace Assignment1_S19
                 {
 
                     Boolean flag = true; //flag set to true for prime numbers
-                    for (int iter1 = num / 2; iter1 >= 2; iter1--) //check if each number in rage is divisible from 2 to number/2
+                    for (int iter1 = num / 2; iter1 >= 2; iter1--) //check if each number in range is divisible from 2 to number/2
                     {
 
                         if (num % iter1 == 0)
@@ -86,22 +89,22 @@ namespace Assignment1_S19
 
             try
             {
+                Console.WriteLine("");
                 double result = 0;//variabe to store series result
-                Console.WriteLine(fact(n));
+               // Console.WriteLine(fact(n));
                 for (int i = 1; i < n; i++) // iteration from 1 to number provided
                 {
                     if (i % 2 != 0)//if condition for odd terms
                     {
                         result = result + (fact(i) / (i + 1.0)); //to get result as double, added 1.0
                     }
-                    if (i % 2 == 0) //if condition for even terms
+                    else //for even terms
                     {
                         result = result - (fact(i) / (i + 1.0)); //to get result as double, added 1.0
                     }
 
                 }//edof for 
                 int result_dec = (int)(result*1000); //rounding off to 3 decimals
-                Console.WriteLine(result_dec);
                 result = (double)result_dec/1000;//rounding off to 3 decimals
                 return result;
 
